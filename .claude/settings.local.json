@@ -1,0 +1,54 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mcp__poke__get_popular_pokemon:*)",
+      "Bash(mcp__poke__list_popular_pokemon:*)",
+      "Bash(npx:*)",
+      "Bash(python:*)",
+      "Bash(findstr:*)",
+      "Bash(netstat:*)",
+      "Bash(tasklist)",
+      "Bash(taskkill:*)",
+      "Bash(mcp__poke__create_tournament_squad:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "openrouterai": {
+    "command": "npx",
+    "args": [
+      "@mcpservers/openrouterai"
+    ],
+    "env": {
+      "OPENROUTER_API_KEY": "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",
+      "OPENROUTER_DEFAULT_MODEL": "openai/gpt-4o-mini-search-preview"
+    }
+  },
+  "redis-mcp-server": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "--from",
+      "git+https://github.com/redis/mcp-redis.git",
+      "redis-mcp-server",
+      "--url",
+      "redis://default:sItLNH9w6BFVZqBMzy1JTult6Ajxnj2r@redis-17736.c61.us-east-1-3.ec2.redns.redis-cloud.com:17736?ssl_cert_reqs=none"
+    ]
+  },
+  "redis-BI-analys": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "--from",
+      "git+https://github.com/redis/mcp-redis.git",
+      "redis-mcp-server",
+      "--url",
+      "redis://default:KSvQA45EE8ZEJ3xcFvus96927CW56D8u@redis-14995.c56.east-us.azure.redns.redis-cloud.com:14995?ssl_cert_reqs=none"
+    ]
+  },
+    "poke": {
+      "command": "python",
+      "args": ["d:\\shared_drive\\Python\\mstr_robotics\\Dansfiles\\testMCP_server.py"],
+      "transport": "stdio"
+    }
+}
